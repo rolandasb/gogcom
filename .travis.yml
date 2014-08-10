@@ -5,3 +5,4 @@ rvm:
   - 2.1.2
 gemfile:
   - Gemfile
+script: 'bundle rake'
