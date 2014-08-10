@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = 'Provides a simple, easy-to-use interface for gog.com website.'
   s.authors     = ['Rolandas Barysas']
   s.email       = ['r.b@riseup.net']
-  s.files       = ['lib/gogcom.rb']
+  s.files       = ['lib/gogcom.rb', 'lib/gogcom/version.rb']
   s.homepage    = 'http://rubygems.org/gems/gogcom'
   s.license     = 'zlib'
 end

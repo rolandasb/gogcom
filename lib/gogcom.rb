@@ -1,5 +1,5 @@
 class Gogcom
 	def self.hi
-		puts "Hello World"
+		"Hello World"
 	end
 end
