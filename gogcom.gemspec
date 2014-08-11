@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Rolandas Barysas']
   s.email       = ['r.b@riseup.net']
   s.files       = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']
+  s.add_runtime_dependency 'nokogiri', ['= 1.6.3.1']
   s.homepage    = 'http://rubygems.org/gems/gogcom'
   s.license     = 'zlib'
 end

@@ -5,6 +5,32 @@ Gogcom is a Ruby library for easy querying gog.com website.
 
 This library is in early stages and not ready for general use.
 
+## Usage
+
+```
+gem 'gogcom', '~> 0.0.0'
+bundle install
+```
+
+```ruby
+require 'gogcom'
+
+game = Gogcom.game("Spelunky")
+
+game.title               # => "Spelunky"
+game.genres              # => ["action", "adventure", "platformer"]
+game.download_size       # => "143 MB"
+game.release_date        # => "August 8, 2013"
+game.price               # => "$14.99"
+game.avg_rating          # => 4.5
+game.avg_ratings_count   # => 257
+game.platforms           # => ["Windows (XP, Vista, 7, 8)"]
+game.languages           # => ["English", "French", "Italian", "German", "Spanish"]
+game.developer           # => "Mossmouth"
+game.publisher           # => "Mossmouth"
+game.game_modes          # => ["single-player", "multi-player", "co-op"]
+```
+
 ## License
 
 This code is free software; you can redistribute it and/or modify it under the terms of the zlib License. A copy of this license can be found in the included LICENSE file.
