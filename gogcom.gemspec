@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'gogcom'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2014-08-10'
   s.summary     = 'A Ruby library for querying gog.com website'
   s.description = 'Provides a simple, easy-to-use interface for gog.com website.'
