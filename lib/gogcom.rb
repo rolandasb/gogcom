@@ -1,9 +1,5 @@
-class Gogcom
-	def self.hi
-		"Hello "
-	end
+require 'open-uri'
+require 'nokogiri'
 
-	def self.world
-		"World"
-	end
-end
+require 'gogcom/gogcom'
+require 'gogcom/game'
