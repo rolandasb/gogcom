@@ -1,4 +1,4 @@
-gogcom ![](https://api.travis-ci.org/rb-/gogcom.svg?branch=develop)
+gogcom [![](https://api.travis-ci.org/rb-/gogcom.svg?branch=develop)](https://travis-ci.org/rb-/gogcom)
 ============
 
 Gogcom is a Ruby library for easy querying gog.com website.
