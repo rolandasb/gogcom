@@ -55,4 +55,8 @@ class GogcomTest < MiniTest::Test
     assert_equal ["single-player"], @game.game_modes
   end
 
+  def test_that_game_has_reviews
+    assert !@game.reviews.empty?
+  end
+
 end

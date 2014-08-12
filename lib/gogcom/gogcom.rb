@@ -31,8 +31,8 @@ class Gogcom
 
     # Average rating
     game.avg_rating = 0.0
-    stuff_raw = page.css('ul.game-specification li')[2].css('.data .usr_rate span')
-    stuff_raw.each do |star|      
+    avg_rating_raw = page.css('ul.game-specification li')[2].css('.data .usr_rate span')
+    avg_rating_raw.each do |star|      
       if star.attr('class') == 'usr_s_f'
         game.avg_rating += 1.0
       elsif star.attr('class') == 'usr_s_h'
@@ -41,8 +41,12 @@ class Gogcom
     end
 
     # Rating count
-    avg_ratings_count_raw = page.css('ul.game-specification li')[2].css('.data span')[6].text
-    game.avg_ratings_count = avg_ratings_count_raw.gsub(/\D/, '').to_i
+    if page.css('ul.game-specification li')[2].css('.data span')[0].attr('class') != "vdark_un"
+      avg_ratings_count_raw = page.css('ul.game-specification li')[2].css('.data span')[6].text
+      game.avg_ratings_count = avg_ratings_count_raw.gsub(/\D/, '').to_i
+    else
+      game.avg_ratings_count = nil
+    end
 
     # Platforms
     game.platforms = []
@@ -62,6 +66,40 @@ class Gogcom
     game_modes_raw = page.css('ul.game-specification li')[7].css('.data')[0].text
     game_modes_raw = game_modes_raw.gsub(/\s+/, '') # Remove whitespaces
     game.game_modes = game_modes_raw.split(',')
+
+    # Reviews
+    game.reviews = []
+    reviews_list_raw = page.css('#reviewsList #reviewsHolder .user_rev')
+    reviews_list_raw.each do |review|
+      if review.attr('class') != "user_rev empty"
+        r = Review.new
+        
+        r.title = review.css('h4').text
+        
+        r.rating = 0.0;
+        ratings = review.css('.usr_rate span')
+        ratings.each do |star|      
+          if star.attr('class') == 'usr_s_f'
+            r.rating += 1.0
+          elsif star.attr('class') == 'usr_s_h'
+            r.rating += 0.5
+          end
+        end
+
+        # date
+        details = review.css('.details').text
+        r.date = details.gsub('Posted on ', '').gsub(/ by\w+:/, '')
+
+        # User
+        r.user = details.gsub(/^(.+?) by/, '').gsub(':', '')
+
+        # Body
+        body = review.css('.text').text
+        r.body = body.gsub('read more', '')
+
+        game.reviews.push(r)
+      end
+    end
 
     game
   end
