@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'helper'
 require 'gogcom'
 
 class GogcomTest < MiniTest::Test
