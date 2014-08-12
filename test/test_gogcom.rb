@@ -56,7 +56,7 @@ class GogcomTest < MiniTest::Test
   end
 
   def test_that_game_has_reviews
-    assert !@game.reviews.empty?
+    assert !@game.reviews.empty?, "Reviews array is empty"
   end
 
 end
