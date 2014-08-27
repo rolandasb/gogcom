@@ -5,6 +5,8 @@ Gogcom is a Ruby library for easy querying gog.com website.
 
 This library is in early stages and not ready for general use.
 
+**WARNING** 2014-08-27 Due recent changes to gog.com website the library is completely unusable. It probably won't be updated till gog will have a working api.
+
 ## Usage
 
 ```
