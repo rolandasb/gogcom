@@ -4,7 +4,7 @@ require 'gogcom/version'
 
 Gem::Specification.new do |s|
   s.name        = 'gogcom'
-  s.version     = Gogcom::VERSION
+  s.version     = GogcomV::VERSION
   s.date        = '2014-09-01'
   s.summary     = 'A Ruby library for querying gog.com website'
   s.description = 'Provides a simple, easy-to-use interface for gog.com website.'
