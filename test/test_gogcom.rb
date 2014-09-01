@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'helper'
 require 'gogcom'
 
 class GogcomTest < MiniTest::Test
@@ -12,7 +13,7 @@ class GogcomTest < MiniTest::Test
   end
 
   def test_that_game_has_genres
-    assert_equal ["strategy", "simulation", "sci-fi"], @game.genres
+    assert_equal ["Strategy", "Simulation", "Sci-fi"], @game.genres
   end
 
   def test_that_game_has_download_size
@@ -20,7 +21,7 @@ class GogcomTest < MiniTest::Test
   end
 
   def test_that_game_has_release_date
-    assert_equal "September 14, 2012", @game.release_date
+    assert_equal 1347595200, @game.release_date
   end
 
   def test_that_game_has_price
@@ -36,7 +37,7 @@ class GogcomTest < MiniTest::Test
   end
 
   def test_that_game_has_platforms
-    assert_equal ["Windows (XP, Vista, 7, 8)", "Mac OS X (10.6.8 or newer)"], @game.platforms
+    assert_equal ["Windows", "Mac"], @game.platforms
   end
 
   def test_that_game_has_languages
@@ -52,7 +53,11 @@ class GogcomTest < MiniTest::Test
   end
 
   def test_that_game_has_game_modes
-    assert_equal ["single-player"], @game.game_modes
+    assert_equal ["Single-player"], @game.game_modes
+  end
+
+  def test_that_game_has_reviews
+    assert !@game.reviews.empty?, "Reviews array is empty"
   end
 
 end

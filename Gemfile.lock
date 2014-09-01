@@ -1,8 +1,16 @@
+PATH
+  remote: .
+  specs:
+    gogcom (0.0.2.pre)
+      json (~> 1.8, >= 1.8.1)
+      nokogiri (~> 1.6, >= 1.6.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    json (1.8.1)
     mini_portile (0.6.0)
-    minitest (5.4.0)
+    minitest (5.4.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     rake (10.3.2)
@@ -11,6 +19,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  minitest (~> 5.4.0)
-  nokogiri (~> 1.6.3.1)
-  rake
+  gogcom!
+  minitest (~> 5.4, >= 5.4.1)
+  rake (~> 10.3, >= 10.3.2)
