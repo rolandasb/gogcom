@@ -1,3 +1,3 @@
 class Review
-  attr_accessor :title, :rating, :date, :user, :body
+  attr_accessor :title, :rating, :author, :body
 end
