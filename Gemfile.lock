@@ -11,7 +11,7 @@ GEM
     json (1.8.1)
     mime-types (2.3)
     mini_portile (0.6.0)
-    minitest (5.4.0)
+    minitest (5.4.1)
     multi_json (1.10.1)
     netrc (0.7.7)
     nokogiri (1.6.3.1)
@@ -36,6 +36,6 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   json
-  minitest (~> 5.4.0)
+  minitest (~> 5.4.1)
   nokogiri (~> 1.6.3.1)
   rake
