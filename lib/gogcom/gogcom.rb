@@ -60,12 +60,11 @@ class Gogcom
     # Reviews
     game.reviews = []
     reviews_raw = data["reviews"]["pages"][0]
-    count = 0
     reviews_raw.each do |review|
       r = Review.new
 
       r.title = review["title"]
-      r.rating = review["rating"]
+      r.rating = review["rating"].to_s.insert(1, ".")
       r.author = review["author"]["name"]
       r.body = review["description"]
       
