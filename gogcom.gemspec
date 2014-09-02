@@ -12,10 +12,10 @@ Gem::Specification.new do |gem|
 	gem.homepage    = 'http://rubygems.org/gems/gogcom'
 	gem.license     = 'zlib'
 
+	gem.add_dependency 'coveralls', '~> 0.7', '>= 0.7.1'
 	gem.add_development_dependency 'rake', '~> 10.3'
 	gem.add_development_dependency 'minitest', '~> 5.4'
 	gem.add_development_dependency 'simplecov', '~> 0.9'
-	gem.add_development_dependency 'coveralls', '~> 0.7', '>= 0.7.1'
 
 	gem.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.3.1'
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'

@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     gogcom (0.0.3)
+      coveralls (~> 0.7, >= 0.7.1)
       json (~> 1.8, >= 1.8.1)
       nokogiri (~> 1.6, >= 1.6.3.1)
 
@@ -41,7 +42,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coveralls (~> 0.7, >= 0.7.1)
   gogcom!
   minitest (~> 5.4)
   rake (~> 10.3)
