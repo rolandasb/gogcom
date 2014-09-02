@@ -1,24 +1,23 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gogcom/version'
+# encoding: utf-8
+require './lib/gogcom/version'
 
-Gem::Specification.new do |s|
-  s.name        = 'gogcom'
-  s.version     = GogcomV::VERSION
-  s.date        = '2014-09-01'
-  s.summary     = 'A Ruby library for querying gog.com website'
-  s.description = 'Provides a simple, easy-to-use interface for gog.com website.'
-  s.authors     = ['Rolandas Barysas']
-  s.email       = ['r.b@riseup.net']
-  s.files       = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']
- 
-  s.add_dependency 'coveralls', '~> 0.7', '>= 0.7.1'
-  s.add_development_dependency 'minitest', '~> 5.4', '>= 5.4.1'
-  s.add_development_dependency 'rake', '~> 10.3', '>= 10.3.2'
+Gem::Specification.new do |gem|
+	gem.name        = 'gogcom'
+	gem.version     = Gogcom::VERSION
+	gem.date        = '2014-09-01'
+	gem.authors     = ['Rolandas Barysas']
+	gem.email       = ['r.b@riseup.net']
+	gem.summary     = 'A Ruby library for querying gog.com website'
+  gem.description = 'Provides a simple, easy-to-use interface for gog.com website.'
+	gem.homepage    = 'http://rubygems.org/gems/gogcom'
+	gem.license     = 'zlib'
 
-  s.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.3.1'
-  s.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
-  
-  s.homepage    = 'http://rubygems.org/gems/gogcom'
-  s.license     = 'zlib'
+	gem.add_development_dependency 'rake', '~> 10.3'
+	gem.add_development_dependency 'minitest', '~> 5.4'
+	gem.add_development_dependency 'simplecov', '~> 0.9'
+
+	gem.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.3.1'
+  gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
+
+	gem.files = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']
 end

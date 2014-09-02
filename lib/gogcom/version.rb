@@ -1,3 +1,3 @@
-module GogcomV
-  VERSION = "0.0.21"
+module Gogcom
+	VERSION = "0.0.3"
 end
