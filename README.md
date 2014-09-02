@@ -8,7 +8,7 @@ This library is in early stages and not ready for general use.
 ## Usage
 
 ```
-gem 'gogcom', '~> 0.0.21'
+gem 'gogcom', '~> 0.0.22'
 bundle install
 ```
 
