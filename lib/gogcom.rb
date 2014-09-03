@@ -1,9 +1,9 @@
 module Gogcom
-	class << self
-		def game(name)
-			Gogcom::Game.get(name)
-		end
-	end
+  class << self
+    def game(name)
+      Gogcom::Game.get(name)
+    end
+  end
 end
 
 require 'open-uri'
