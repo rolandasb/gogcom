@@ -2,7 +2,9 @@ require 'helper'
 
 class GogcomTest < Minitest::Test  
   def setup
-    @data = Gogcom::Game.get_data("Faster Than Light")
+    VCR.use_cassette('game') do
+      @data = Gogcom::Game.get_data("Faster Than Light")
+    end
   end
 
   def test_get_data
@@ -62,7 +64,9 @@ class GogcomTest < Minitest::Test
   end
 
   def test_get
-    game = Gogcom::Game.get("Spelunky")
-    assert_kind_of Object, game
+    VCR.use_cassette('game') do
+      game = Gogcom::Game.get("Faster Than Light")
+      assert_kind_of Object, game
+    end
   end
 end

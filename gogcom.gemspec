@@ -16,8 +16,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake', '~> 10.3'
   gem.add_development_dependency 'minitest', '~> 5.4'
   gem.add_development_dependency 'simplecov', '~> 0.9'
+  gem.add_development_dependency 'vcr', '~> 2.9'
+  gem.add_development_dependency 'webmock', '~> 1.18'
 
-  gem.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.3.1'
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
 
   gem.files = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']

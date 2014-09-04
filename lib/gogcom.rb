@@ -6,8 +6,7 @@ module Gogcom
   end
 end
 
-require 'open-uri'
-require 'nokogiri'
+require 'net/http'
 require 'json'
 
 require 'gogcom/func'
