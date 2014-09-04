@@ -6,9 +6,8 @@ module Gogcom
 
     def self.get_data(game_name)
       name = Gogcom::Func.urlfy(game_name)
-      page = Nokogiri::HTML(open("http://www.gog.com/game/" + name))
-      data = JSON.parse(page.css('script')[0].text.gsub(/^\s+|\s+$/, "")
-                 .gsub("var gogData = ", "")[0..-2])
+      page = Net::HTTP.get(URI("http://www.gog.com/game/" + name))
+      data = JSON.parse(page[/(?<=var gogData = )(.*)(?=;)/,1])
       data
     end
 

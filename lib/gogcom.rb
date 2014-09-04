@@ -1,16 +1,20 @@
 module Gogcom
-	class << self
-		def game(name)
-			Gogcom::Game.get(name)
-		end
-	end
+  class << self
+    def game(name)
+      Gogcom::Game.get(name)
+    end
+
+    def sale
+    	Gogcom::Sale.get
+    end
+  end
 end
 
-require 'open-uri'
-require 'nokogiri'
+require 'net/http'
 require 'json'
 
 require 'gogcom/func'
 require 'gogcom/review'
 require 'gogcom/game'
+require 'gogcom/sale'
 require 'gogcom/version'

@@ -7,11 +7,13 @@ This library is in early stages and not ready for general use.
 
 ## Usage
 
+#### Installation
 ```
-gem 'gogcom', '~> 0.0.22'
+gem 'gogcom', '~> 0.0.23'
 bundle install
 ```
 
+#### Get game info
 ```ruby
 require 'gogcom'
 
@@ -31,10 +33,27 @@ game.publisher           # => "Mossmouth"
 game.game_modes          # => ["Single-player", "Multi-player", "Co-op"]
 
 # Reviews right now are limited to 5 (sorted by most helpful, same as in actual website)
-game.reviews[0].title    # => "..."
-game.reviews[0].rating   # => "..."
-game.reviews[0].author   # => "..."
-game.reviews[0].body     # => "..."
+game.reviews.each do |review|
+	review.title
+	review.rating
+	review.author
+	review.body
+end
+```
+
+#### Get games on sale
+```ruby
+require 'gogcom'
+
+sale = Gogcom.sale
+
+sale.each do |game|
+	game.title
+	game.price_current
+	game.price_original
+	game.discount_percentage
+	game.discount_amount
+end
 ```
 
 ## License
