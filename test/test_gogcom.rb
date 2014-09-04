@@ -5,4 +5,11 @@ class GogcomTest < Minitest::Test
       assert_kind_of Object, game
     end
   end
+
+  def test_sale
+    VCR.use_cassette('index') do
+      sale = Gogcom.sale
+      assert_kind_of Array, sale
+    end
+  end
 end

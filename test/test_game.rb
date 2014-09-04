@@ -1,6 +1,6 @@
 require 'helper'
 
-class GogcomTest < Minitest::Test  
+class GogcomGameTest < Minitest::Test  
   def setup
     VCR.use_cassette('game') do
       @data = Gogcom::Game.get_data("Faster Than Light")
