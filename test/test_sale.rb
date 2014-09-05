@@ -33,6 +33,14 @@ class GogcomSaleTest < Minitest::Test
     assert_equal Gogcom::Sale.get_discount_amount(@data, @game_id), "$6.00"
   end
 
+  def test_is_game?
+    assert_equal Gogcom::Sale.is_game?(@data, @game_id), true 
+  end
+  
+  def test_is_movie?
+    assert_equal Gogcom::Sale.is_movie?(@data, @game_id), false
+  end
+
   def test_get
     VCR.use_cassette('index') do
       sale = Gogcom::Sale.get

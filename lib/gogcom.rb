@@ -4,8 +4,8 @@ module Gogcom
       Gogcom::Game.get(name)
     end
 
-    def sale
-    	Gogcom::Sale.get
+    def sale(options = {})
+    	Gogcom::Sale.get(options)
     end
   end
 end
