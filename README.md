@@ -9,7 +9,7 @@ This library is in early stages and not ready for general use.
 
 #### Installation
 ```
-gem 'gogcom', '~> 0.0.23'
+gem 'gogcom', '~> 0.0.24'
 bundle install
 ```
 
@@ -23,11 +23,13 @@ game.title               # => "Spelunky"
 game.genres              # => ["Action", "Adventure", "Platformer"]
 game.download_size       # => "143 MB"
 game.release_date        # => 1375934400 (Unix time)
+game.description         # => "..."
 game.price               # => "$14.99"
 game.avg_rating          # => "4.6"
 game.avg_ratings_count   # => 268
 game.platforms           # => ["Windows"]
 game.languages           # => ["English", "French", "Italian", "German", "Spanish"]
+game.pegiAge             # => false
 game.developer           # => "Mossmouth"
 game.publisher           # => "Mossmouth"
 game.game_modes          # => ["Single-player", "Multi-player", "Co-op"]
@@ -46,6 +48,8 @@ end
 require 'gogcom'
 
 sale = Gogcom.sale
+# sale = Gogcom.sale(:type => "games")
+# sale = Gogcom.sale(:type => "movies")
 
 sale.each do |game|
 	game.title

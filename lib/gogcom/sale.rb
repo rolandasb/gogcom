@@ -29,10 +29,19 @@ module Gogcom
      data["on_sale"][i]["price"]["symbol"] + data["on_sale"][i]["price"]["discountDifference"]
     end
 
-    def self.get
+    def self.is_game?(data, i)
+      data["on_sale"][i]["isGame"]
+    end
+
+    def self.is_movie?(data, i)
+      data["on_sale"][i]["isMovie"]
+    end
+
+    def self.get(options = {})
       data = self.get_data
       sale = []
       count = 0
+      type = options[:type] || nil
 
       data["on_sale"].each do |item|
         game = Sale.new
@@ -42,8 +51,19 @@ module Gogcom
         game.price_original = get_price_original(data, count)
         game.discount_percentage = get_discount_percentage(data, count)
         game.discount_amount = get_discount_amount(data, count)
-        
-        sale.push(game)
+
+        if (type == "games")
+          if (is_game?(data, count))
+            sale.push(game)
+          end
+        elsif (type == "movies")
+          if (is_movie?(data, count))
+            sale.push(game)
+          end
+        else
+          sale.push(game)
+        end
+
         count += 1
       end
 

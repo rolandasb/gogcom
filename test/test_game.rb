@@ -27,6 +27,10 @@ class GogcomGameTest < Minitest::Test
     assert_equal Gogcom::Game.get_release_date(@data), 1347595200
   end
 
+  def test_description
+    assert_kind_of String, Gogcom::Game.get_description(@data)
+  end
+
   def test_price
     assert_match /^\$\d+(\.\d{2})?$/, Gogcom::Game.get_price(@data)
   end
@@ -41,6 +45,10 @@ class GogcomGameTest < Minitest::Test
 
   def test_platforms
     assert_equal Gogcom::Game.get_platforms(@data), ["Windows", "Mac"]
+  end
+
+  def test_pegiAge
+    assert_equal Gogcom::Game.get_pegiAge(@data), false
   end
 
   def test_languages
