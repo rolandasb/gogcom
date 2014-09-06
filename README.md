@@ -28,6 +28,7 @@ game.avg_rating          # => "4.6"
 game.avg_ratings_count   # => 268
 game.platforms           # => ["Windows"]
 game.languages           # => ["English", "French", "Italian", "German", "Spanish"]
+game.pegiAge             # => false
 game.developer           # => "Mossmouth"
 game.publisher           # => "Mossmouth"
 game.game_modes          # => ["Single-player", "Multi-player", "Co-op"]

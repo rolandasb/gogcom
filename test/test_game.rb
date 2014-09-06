@@ -43,6 +43,10 @@ class GogcomGameTest < Minitest::Test
     assert_equal Gogcom::Game.get_platforms(@data), ["Windows", "Mac"]
   end
 
+  def test_pegiAge
+    assert_equal Gogcom::Game.get_pegiAge(@data), false
+  end
+
   def test_languages
     assert_equal Gogcom::Game.get_languages(@data), ["English"]
   end
