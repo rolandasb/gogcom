@@ -23,6 +23,7 @@ game.title               # => "Spelunky"
 game.genres              # => ["Action", "Adventure", "Platformer"]
 game.download_size       # => "143 MB"
 game.release_date        # => 1375934400 (Unix time)
+game.description         # => "..."
 game.price               # => "$14.99"
 game.avg_rating          # => "4.6"
 game.avg_ratings_count   # => 268
