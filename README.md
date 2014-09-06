@@ -48,6 +48,8 @@ end
 require 'gogcom'
 
 sale = Gogcom.sale
+# sale = Gogcom.sale(:type => "games")
+# sale = Gogcom.sale(:type => "movies")
 
 sale.each do |game|
 	game.title
