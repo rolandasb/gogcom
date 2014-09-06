@@ -1,6 +1,6 @@
 module Gogcom
   class Game
-    attr_accessor :title, :genres, :download_size, :release_date, :price, :avg_rating,
+    attr_accessor :title, :genres, :download_size, :release_date, :description, :price, :avg_rating,
                 :avg_ratings_count, :platforms, :pegiAge, :languages, :developer, :publisher,
                 :game_modes, :reviews
 
@@ -31,6 +31,10 @@ module Gogcom
 
     def self.get_release_date(data)
       data["gameProductData"]["releaseDate"]
+    end
+
+    def self.get_description(data)
+      data["gameProductData"]["description"]["full"]
     end
 
     def self.get_price(data)
@@ -108,6 +112,7 @@ module Gogcom
       game.genres = get_genres(data)
       game.download_size = get_download_size(data)
       game.release_date = get_release_date(data)
+      game.description = get_description(data)
       game.price = get_price(data)
       game.avg_rating = get_avg_rating(data)
       game.avg_ratings_count = get_avg_ratings_count(data)
