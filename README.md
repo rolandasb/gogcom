@@ -9,7 +9,7 @@ This library is in early stages and not ready for general use.
 
 #### Installation
 ```
-gem 'gogcom', '~> 0.0.23'
+gem 'gogcom', '~> 0.0.24'
 bundle install
 ```
 
