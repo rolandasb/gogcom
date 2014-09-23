@@ -15,8 +15,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'coveralls', '~> 0.7', '>= 0.7.1'
   gem.add_development_dependency 'rake', '~> 10.3'
   gem.add_development_dependency 'minitest', '~> 5.4'
-  gem.add_development_dependency 'simplecov', '>= 0.9.1'
-  gem.add_development_dependency 'vcr', '~> 2.9'
+  gem.add_development_dependency 'simplecov', '~> 0.9', '>= 0.9.1'
+  gem.add_development_dependency 'vcr', '~> 2.9', '>= 2.9.1'
   gem.add_development_dependency 'webmock', '~> 1.18'
 
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
