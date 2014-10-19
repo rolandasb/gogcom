@@ -32,6 +32,7 @@ game.languages           # => ["English", "French", "Italian", "German", "Spanis
 game.pegiAge             # => false
 game.developer           # => "Mossmouth"
 game.publisher           # => "Mossmouth"
+game.bonus_content       # => [...]
 game.game_modes          # => ["Single-player", "Multi-player", "Co-op"]
 
 # Reviews right now are limited to 5 (sorted by most helpful, same as in actual website)
