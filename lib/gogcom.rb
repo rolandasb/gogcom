@@ -15,14 +15,20 @@ module Gogcom
     def sale(options = {})
     	Gogcom::Sale.get(options)
     end
+
+    def news()
+      Gogcom::News.get()
+    end
   end
 end
 
 require 'net/http'
 require 'json'
+require 'simple-rss'
 
 require 'gogcom/func'
 require 'gogcom/review'
 require 'gogcom/game'
 require 'gogcom/sale'
+require 'gogcom/news'
 require 'gogcom/version'

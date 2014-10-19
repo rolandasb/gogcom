@@ -20,6 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'webmock', '~> 1.18'
 
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
+  gem.add_runtime_dependency 'simple-rss', '~> 1.3', '>= 1.3.1'
 
   gem.files = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']
 end
