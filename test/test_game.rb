@@ -67,6 +67,10 @@ class GogcomGameTest < Minitest::Test
     assert_equal Gogcom::Game.get_modes(@data), ["Single-player"]
   end
 
+  def test_bonus_content
+    assert_equal Gogcom::Game.get_bonusContent(@data), ["wallpaper", "soundtrack sample (5 tracks)", "avatars", "artworks"]
+  end
+
   def test_reviews
     assert Gogcom::Game.get_reviews(@data).is_a?(Array)
   end
