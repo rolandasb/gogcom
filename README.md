@@ -3,7 +3,7 @@ gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.i
 
 Gogcom is a Ruby library for easy querying gog.com website.
 
-This library is in early stages and not ready for general use.
+This library is in early stages and not ready for production use.
 
 ## Usage
 
@@ -58,6 +58,21 @@ sale.each do |game|
 	game.price_original
 	game.discount_percentage
 	game.discount_amount
+end
+```
+
+#### Get news
+```ruby
+require 'gogcom'
+
+news = Gogcom.news
+# news = Gogcom.news(:limit => 3)
+
+news.each do |post|
+  post.title
+  post.link
+  post.body
+  post.date
 end
 ```
 
