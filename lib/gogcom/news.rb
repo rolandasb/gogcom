@@ -8,9 +8,11 @@ module Gogcom
 			page
 		end
 
-		def self.get()
+		def self.get(options)
 			rss = SimpleRSS.parse self.get_data()
 			news = Array.new
+			limit = options[:limit] || nil
+			count = 0
 
 			rss.items.each do |item|
 				news_item = News.new
@@ -21,6 +23,9 @@ module Gogcom
 				news_item.date = item.pubDate
 
 				news.push news_item
+				count += 1
+				
+				break if !limit.nil? && count >= limit
 			end
 
 			news

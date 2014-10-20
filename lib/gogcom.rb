@@ -16,8 +16,12 @@ module Gogcom
     	Gogcom::Sale.get(options)
     end
 
-    def news()
-      Gogcom::News.get()
+    # Gets all news
+    #
+    # @param [Hash]
+    #   :limit => 5
+    def news(options = {})
+      Gogcom::News.get(options)
     end
   end
 end
