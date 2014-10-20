@@ -8,8 +8,8 @@ module Gogcom
 			page
 		end
 
-		def self.get(options)
-			rss = SimpleRSS.parse self.get_data()
+		def self.parse_data(data, options = {})
+			rss = SimpleRSS.parse data
 			news = Array.new
 			limit = options[:limit] || nil
 			count = 0
@@ -29,6 +29,10 @@ module Gogcom
 			end
 
 			news
+		end
+
+		def self.get(options)
+			self.parse_data(self.get_data(), options)
 		end
 	end
 end
