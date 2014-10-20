@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm gogcom-*.gem
+gem build gogcom.gemspec
+gem install gogcom-*.gem

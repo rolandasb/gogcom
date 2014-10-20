@@ -2,7 +2,7 @@ module Gogcom
   class Game
     attr_accessor :title, :genres, :download_size, :release_date, :description, :price, :avg_rating,
                 :avg_ratings_count, :platforms, :pegiAge, :languages, :developer, :publisher,
-                :game_modes, :reviews
+                :game_modes, :bonus_content, :reviews
 
     def self.get_data(game_name)
       name = Gogcom::Func.urlfy(game_name)
@@ -83,6 +83,21 @@ module Gogcom
       game_modes
     end
 
+    def self.get_bonusContent(data)
+      bonusContent = []
+      bonusContent_raw = data["gameProductData"]["bonusContent"]
+      
+      bonusContent_raw["hidden"].each do |bc|
+        bonusContent.push(bc["name"])
+      end
+
+      bonusContent_raw["visible"].each do |bc|
+        bonusContent.push(bc["name"])
+      end
+
+      bonusContent
+    end
+
     def self.get_reviews(data)
       reviews = []
       reviews_raw = data["reviews"]["pages"][0]
@@ -122,6 +137,7 @@ module Gogcom
       game.developer = get_developer(data)
       game.publisher = get_publisher(data)
       game.game_modes = get_modes(data)
+      game.bonus_content = get_bonusContent(data)
       game.reviews = get_reviews(data)
 
       game

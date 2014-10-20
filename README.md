@@ -1,15 +1,15 @@
-gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![](https://api.travis-ci.org/rb-/gogcom.svg?branch=develop)](https://travis-ci.org/rb-/gogcom) [![Dependency Status](https://gemnasium.com/rb-/gogcom.svg)](https://gemnasium.com/rb-/gogcom) [![Coverage Status](https://coveralls.io/repos/rb-/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rb-/gogcom?branch=develop)
+gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![Build Status](https://travis-ci.org/rbrs/gogcom.svg?branch=develop)](https://travis-ci.org/rbrs/gogcom) [![Dependency Status](https://gemnasium.com/rbrs/gogcom.svg)](https://gemnasium.com/rb-/gogcom) [![Coverage Status](https://coveralls.io/repos/rb-/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rb-/gogcom?branch=develop)
 ============
 
 Gogcom is a Ruby library for easy querying gog.com website.
 
-This library is in early stages and not ready for general use.
+This library is in early stages and not ready for production use.
 
 ## Usage
 
 #### Installation
 ```
-gem 'gogcom', '~> 0.0.24'
+gem 'gogcom', '~> 0.0.25'
 bundle install
 ```
 
@@ -32,6 +32,7 @@ game.languages           # => ["English", "French", "Italian", "German", "Spanis
 game.pegiAge             # => false
 game.developer           # => "Mossmouth"
 game.publisher           # => "Mossmouth"
+game.bonus_content       # => [...]
 game.game_modes          # => ["Single-player", "Multi-player", "Co-op"]
 
 # Reviews right now are limited to 5 (sorted by most helpful, same as in actual website)
@@ -57,6 +58,21 @@ sale.each do |game|
 	game.price_original
 	game.discount_percentage
 	game.discount_amount
+end
+```
+
+#### Get news
+```ruby
+require 'gogcom'
+
+news = Gogcom.news
+# news = Gogcom.news(:limit => 3)
+
+news.each do |post|
+  post.title
+  post.link
+  post.body
+  post.date
 end
 ```
 
