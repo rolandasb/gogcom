@@ -7,7 +7,11 @@ module Gogcom
     def self.get_data(game_name)
       name = Gogcom::Func.urlfy(game_name)
       page = Net::HTTP.get(URI("http://www.gog.com/game/" + name))
-      data = JSON.parse(page[/(?<=var gogData = )(.*)(?=;)/,1])
+      begin
+        data = JSON.parse(page[/(?<=var gogData = )(.*)(?=;)/,1])
+      rescue
+        data = nil
+      end
       data
     end
 
@@ -122,6 +126,10 @@ module Gogcom
     def self.get(game_name)
       data = self.get_data(game_name)
       game = Game.new
+
+      if data == nil
+        return nil
+      end 
 
       game.title = get_title(data)
       game.genres = get_genres(data)
