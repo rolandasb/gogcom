@@ -13,7 +13,7 @@ module Gogcom
     #   :type => "games"
     #   :type => "movies" 
     def sale(options = {})
-    	Gogcom::Sale.get(options)
+        Gogcom::Sale.get(options)
     end
 
     # Gets all news
@@ -21,7 +21,7 @@ module Gogcom
     # @param [Hash]
     #   :limit => 5
     def news(options = {})
-      Gogcom::News.get(options)
+      Gogcom::News.new(options).get()
     end
   end
 end
