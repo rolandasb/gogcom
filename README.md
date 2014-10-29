@@ -3,7 +3,10 @@ gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.i
 
 Gogcom is a Ruby library for easy querying gog.com website.
 
-This library is in early stages and not ready for production use.
+Because GOG.com doesn't have official API, data is being gathered by parsing global javascript object.
+That means that there's no guarantee that gem will always work as expected. **Do not use this in production.**
+
+I might be working on unnoficial GOG database, to make this API safe for production use. There's no timeline when it will be done, though.
 
 ## Usage
 
