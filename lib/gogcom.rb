@@ -11,9 +11,10 @@ module Gogcom
     #
     # @param [Hash]
     #   :type => "games"
-    #   :type => "movies" 
+    #   :type => "movies"
+    #   :limit => 5
     def sale(options = {})
-        Gogcom::Sale.get(options)
+        Gogcom::Sale.new(options).get()
     end
 
     # Gets all news
