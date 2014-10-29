@@ -4,8 +4,12 @@ module Gogcom
     #
     # @param [Hash]
     #   :name => "Spelunky"
-    def game(options)
-      Gogcom::Game.new(options).get()
+    def game(options = {})
+      begin
+        Gogcom::Game.new(options).get()
+      rescue
+        nil
+      end
     end
 
     # Gets all items on sale.
@@ -15,7 +19,11 @@ module Gogcom
     #   :type => "movies"
     #   :limit => 5
     def sale(options = {})
-      Gogcom::Sale.new(options).get()
+      begin
+        Gogcom::Sale.new(options).get()
+      rescue
+        nil
+      end
     end
 
     # Gets all news
@@ -23,7 +31,11 @@ module Gogcom
     # @param [Hash]
     #   :limit => 5
     def news(options = {})
-      Gogcom::News.new(options).get()
+      begin
+        Gogcom::News.new(options).get()
+      rescue
+        nil
+      end
     end
   end
 end
