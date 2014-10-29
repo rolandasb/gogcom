@@ -3,8 +3,8 @@ module Gogcom
     # Gets game information from website.
     #
     # @param [string] Game name
-    def game(name)
-      Gogcom::Game.get(name)
+    def game(options)
+      Gogcom::Game.new(options).get()
     end
 
     # Gets all items on sale.
@@ -31,8 +31,6 @@ require 'net/http'
 require 'json'
 require 'simple-rss'
 
-require 'gogcom/func'
-require 'gogcom/review'
 require 'gogcom/game'
 require 'gogcom/sale'
 require 'gogcom/news'
