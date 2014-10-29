@@ -29,8 +29,8 @@ module Gogcom
       items = []
 
       data["on_sale"].each do |item|
-        sale_item = SaleItem.new(get_title(item), get_price_current(item),
-          get_price_original(item), get_discount_percentage(item),
+        sale_item = SaleItem.new(get_title(item), get_current_price(item),
+          get_original_price(item), get_discount_percentage(item),
           get_discount_amount(item))
 
         if @type.nil?
@@ -57,11 +57,11 @@ module Gogcom
       data["title"]
     end
 
-    def get_price_current(data)
+    def get_current_price(data)
       data["price"]["symbol"] + data["price"]["amount"]
     end
 
-    def get_price_original(data)
+    def get_original_price(data)
       data["price"]["symbol"] + data["price"]["baseAmount"]
     end
 
@@ -82,7 +82,7 @@ module Gogcom
     end
   end
 
-  class SaleItem < Struct.new(:title, :price_current, :price_original,
+  class SaleItem < Struct.new(:title, :current_price, :original_price,
     :discount_percentage, :discount_amount, :isGame, :isMovie)
   end
 end
