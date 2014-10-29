@@ -51,11 +51,12 @@ require 'gogcom'
 sale = Gogcom.sale
 # sale = Gogcom.sale(:type => "games")
 # sale = Gogcom.sale(:type => "movies")
+# sale = Gogcom.sale(:limit => 5)
 
 sale.each do |game|
 	game.title
-	game.price_current
-	game.price_original
+	game.current_price
+	game.original_price
 	game.discount_percentage
 	game.discount_amount
 end
