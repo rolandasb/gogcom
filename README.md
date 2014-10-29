@@ -1,4 +1,4 @@
-gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![Build Status](https://travis-ci.org/rbrs/gogcom.svg?branch=develop)](https://travis-ci.org/rbrs/gogcom) [![Dependency Status](https://gemnasium.com/rbrs/gogcom.svg)](https://gemnasium.com/rbrs/gogcom) [![Coverage Status](https://coveralls.io/repos/rb-/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rb-/gogcom?branch=develop)
+gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![Build Status](https://travis-ci.org/rbrs/gogcom.svg?branch=develop)](https://travis-ci.org/rbrs/gogcom) [![Dependency Status](https://gemnasium.com/rbrs/gogcom.svg)](https://gemnasium.com/rbrs/gogcom) [![Coverage Status](https://coveralls.io/repos/rbrs/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rbrs/gogcom?branch=develop)
 ============
 
 Gogcom is a Ruby library for easy querying gog.com website.
