@@ -2,7 +2,8 @@ module Gogcom
   class << self
     # Gets game information from website.
     #
-    # @param [string] Game name
+    # @param [Hash]
+    #   :name => "Spelunky"
     def game(options)
       Gogcom::Game.new(options).get()
     end
@@ -14,7 +15,7 @@ module Gogcom
     #   :type => "movies"
     #   :limit => 5
     def sale(options = {})
-        Gogcom::Sale.new(options).get()
+      Gogcom::Sale.new(options).get()
     end
 
     # Gets all news

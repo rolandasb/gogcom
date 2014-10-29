@@ -158,7 +158,7 @@ module Gogcom
   class GameItem < Struct.new(:title, :genres, :download_size, :release_date,
     :description, :price, :avg_rating, :avg_ratings_count, :platforms,
     :languages, :developer, :publisher, :game_modes, :bonus_content, :reviews,
-    :pegiAge)
+    :pegi_age)
   end
 
   class Review < Struct.new(:title, :rating, :author, :body)
