@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gogcom (0.0.25)
+    gogcom (0.0.26)
       coveralls (~> 0.7, >= 0.7.1)
       json (~> 1.8, >= 1.8.1)
       simple-rss (~> 1.3, >= 1.3.1)
@@ -20,7 +20,7 @@ GEM
       safe_yaml (~> 1.0.0)
     docile (1.1.5)
     json (1.8.1)
-    mime-types (2.4.2)
+    mime-types (2.4.3)
     minitest (5.4.2)
     multi_json (1.10.1)
     netrc (0.8.0)
@@ -40,7 +40,7 @@ GEM
     thor (0.19.1)
     tins (1.3.3)
     vcr (2.9.3)
-    webmock (1.19.0)
+    webmock (1.20.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
 
@@ -53,4 +53,4 @@ DEPENDENCIES
   rake (~> 10.3)
   simplecov (>= 0.9.1)
   vcr (>= 2.9.1)
-  webmock (~> 1.18)
+  webmock (~> 1.20)

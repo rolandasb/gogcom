@@ -1,38 +1,47 @@
 module Gogcom
-	class News
-		attr_accessor :title, :link, :body, :date
+  class News
 
-		def self.get_data()
-			data_url = "http://www.gog.com/frontpage/rss" 
-			page = Net::HTTP.get(URI(data_url))
-			page
-		end
+    def initialize(options)
+      @limit = options[:limit] || nil
+    end
 
-		def self.parse_data(data, options = {})
-			rss = SimpleRSS.parse data
-			news = Array.new
-			limit = options[:limit] || nil
-			count = 0
+    # Main method to get news data.
+    def get()
+      parse(fetch())
+    end
 
-			rss.items.each do |item|
-				news_item = News.new
-				
-				news_item.title = item.title
-				news_item.link = item.link
-				news_item.body = item.description.force_encoding("UTF-8")
-				news_item.date = item.pubDate
+    private
 
-				news.push news_item
-				count += 1
-				
-				break if !limit.nil? && count >= limit
-			end
+    # Fetches raw data from source.
+    #
+    # @return [String]
+    def fetch()
+      url = "http://www.gog.com/frontpage/rss"
+      page = Net::HTTP.get(URI(url))
+      page
+    end
 
-			news
-		end
+    # Parses raw data and returns news items
+    #
+    # @return [Array]
+    def parse(data)
+      rss = SimpleRSS.parse data
+      news = Array.new
 
-		def self.get(options)
-			self.parse_data(self.get_data(), options)
-		end
-	end
+      rss.items.each do |item|
+        news_item = NewsItem.new(item.title, item.link, item.description.force_encoding("UTF-8"), item.pubDate)
+
+        news.push news_item
+      end
+
+      unless @limit.nil?
+        news.take(@limit)
+      else
+        news
+      end
+    end
+  end
+
+  class NewsItem < Struct.new(:title, :link, :body, :date)
+  end
 end

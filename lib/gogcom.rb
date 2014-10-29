@@ -2,18 +2,20 @@ module Gogcom
   class << self
     # Gets game information from website.
     #
-    # @param [string] Game name
-    def game(name)
-      Gogcom::Game.get(name)
+    # @param [Hash]
+    #   :name => "Spelunky"
+    def game(options)
+      Gogcom::Game.new(options).get()
     end
 
     # Gets all items on sale.
     #
     # @param [Hash]
     #   :type => "games"
-    #   :type => "movies" 
+    #   :type => "movies"
+    #   :limit => 5
     def sale(options = {})
-    	Gogcom::Sale.get(options)
+      Gogcom::Sale.new(options).get()
     end
 
     # Gets all news
@@ -21,7 +23,7 @@ module Gogcom
     # @param [Hash]
     #   :limit => 5
     def news(options = {})
-      Gogcom::News.get(options)
+      Gogcom::News.new(options).get()
     end
   end
 end
@@ -30,8 +32,6 @@ require 'net/http'
 require 'json'
 require 'simple-rss'
 
-require 'gogcom/func'
-require 'gogcom/review'
 require 'gogcom/game'
 require 'gogcom/sale'
 require 'gogcom/news'

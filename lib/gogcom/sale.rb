@@ -1,73 +1,88 @@
 module Gogcom
   class Sale
-    attr_accessor :title, :price_current, :price_original, :discount_percentage,
-                  :discount_amount
 
-    def self.get_data
-      page = Net::HTTP.get(URI("http://www.gog.com/"))
-      data = JSON.parse(page[/(?<=var gogData = )(.*)(?=;)/,1])
-      data
+    def initialize(options)
+      @type = options[:type] || nil
+      @limit = options[:limit] || nil
     end
 
-    def self.get_title(data, i)
-      data["on_sale"][i]["title"]
+    # Main method to get sales data.
+    def get()
+      parse(fetch())
     end
 
-    def self.get_price_current(data, i)
-      data["on_sale"][i]["price"]["symbol"] + data["on_sale"][i]["price"]["amount"]
+    private
+
+    # Fetches raw data from source.
+    #
+    # @return [Object]
+    def fetch()
+      url = "http://www.gog.com/"
+      page = Net::HTTP.get(URI(url))
+      @data = JSON.parse(page[/(?<=var gogData = )(.*)(?=;)/,1])
     end
 
-    def self.get_price_original(data, i)
-      data["on_sale"][i]["price"]["symbol"] + data["on_sale"][i]["price"]["baseAmount"]
-    end
-
-    def self.get_discount_percentage(data, i)
-      data["on_sale"][i]["price"]["discountPercentage"]
-    end
-
-    def self.get_discount_amount(data, i)
-     data["on_sale"][i]["price"]["symbol"] + data["on_sale"][i]["price"]["discountDifference"]
-    end
-
-    def self.is_game?(data, i)
-      data["on_sale"][i]["isGame"]
-    end
-
-    def self.is_movie?(data, i)
-      data["on_sale"][i]["isMovie"]
-    end
-
-    def self.get(options = {})
-      data = self.get_data
-      sale = []
-      count = 0
-      type = options[:type] || nil
+    # Parses raw data and returns sale items.
+    #
+    # @return [Array]
+    def parse(data)
+      items = []
 
       data["on_sale"].each do |item|
-        game = Sale.new
-        
-        game.title = get_title(data, count)
-        game.price_current = get_price_current(data, count)
-        game.price_original = get_price_original(data, count)
-        game.discount_percentage = get_discount_percentage(data, count)
-        game.discount_amount = get_discount_amount(data, count)
+        sale_item = SaleItem.new(get_title(item), get_current_price(item),
+          get_original_price(item), get_discount_percentage(item),
+          get_discount_amount(item))
 
-        if (type == "games")
-          if (is_game?(data, count))
-            sale.push(game)
-          end
-        elsif (type == "movies")
-          if (is_movie?(data, count))
-            sale.push(game)
-          end
+        if @type.nil?
+          items.push(sale_item)
         else
-          sale.push(game)
-        end
+          if (@type == "games" && is_game?(item))
+            items.push(sale_item)
+          end
 
-        count += 1
+          if (@type == "movies" && is_movie?(item))
+            items.push(sale_item)
+          end
+        end
       end
 
-      sale
+      unless @limit.nil?
+        items.take(@limit)
+      else
+        items
+      end
+    end 
+
+    def get_title(data)
+      data["title"]
     end
+
+    def get_current_price(data)
+      data["price"]["symbol"] + data["price"]["amount"]
+    end
+
+    def get_original_price(data)
+      data["price"]["symbol"] + data["price"]["baseAmount"]
+    end
+
+    def get_discount_percentage(data)
+      data["price"]["discountPercentage"]
+    end
+
+    def get_discount_amount(data)
+      data["price"]["symbol"] + data["price"]["discountDifference"]
+    end
+
+    def is_game?(data)
+      data["isGame"]
+    end
+
+    def is_movie?(data)
+      data["isMovie"]
+    end
+  end
+
+  class SaleItem < Struct.new(:title, :current_price, :original_price,
+    :discount_percentage, :discount_amount, :isGame, :isMovie)
   end
 end
