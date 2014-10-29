@@ -12,7 +12,7 @@ I might be working on unnoficial GOG database, to make this API safe for product
 
 #### Installation
 ```
-gem 'gogcom', '~> 0.0.25'
+gem 'gogcom', '~> 0.0.26'
 bundle install
 ```
 
