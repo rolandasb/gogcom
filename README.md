@@ -17,7 +17,7 @@ bundle install
 ```ruby
 require 'gogcom'
 
-game = Gogcom.game("Spelunky")
+game = Gogcom.game(:name => "Spelunky")
 
 game.title               # => "Spelunky"
 game.genres              # => ["Action", "Adventure", "Platformer"]
@@ -29,7 +29,7 @@ game.avg_rating          # => "4.6"
 game.avg_ratings_count   # => 268
 game.platforms           # => ["Windows"]
 game.languages           # => ["English", "French", "Italian", "German", "Spanish"]
-game.pegiAge             # => false
+game.pegi_age             # => false
 game.developer           # => "Mossmouth"
 game.publisher           # => "Mossmouth"
 game.bonus_content       # => [...]
