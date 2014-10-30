@@ -6,7 +6,7 @@ Gogcom is a Ruby library for easy querying gog.com website.
 Because GOG.com doesn't have official API, data is being gathered by parsing global javascript object.
 That means that there's no guarantee that gem will always work as expected. **Do not use this in production.**
 
-I might be working on unnoficial GOG database, to make this API safe for production use. There's no timeline when it will be done, though.
+I am working on unofficial GOG database, which after release will be connected with this library. This will prevent this library from breaking when unexpected changes occur on GOG end. You can see progress ![here](https://github.com/rbrs/gogdb).
 
 ## Usage
 
