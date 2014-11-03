@@ -53,4 +53,4 @@ DEPENDENCIES
   rake (~> 10.3)
   simplecov (>= 0.9.1)
   vcr (>= 2.9.1)
-  webmock (~> 1.20, >= 1.20.2)
+  webmock (~> 1.20.2)

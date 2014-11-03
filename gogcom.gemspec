@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'minitest', '~> 5.4'
   gem.add_development_dependency 'simplecov', '>= 0.9.1'
   gem.add_development_dependency 'vcr', '>= 2.9.1'
-  gem.add_development_dependency 'webmock', '~> 1.20', '>= 1.20.2'
+  gem.add_development_dependency 'webmock', '~> 1.20.2'
 
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
   gem.add_runtime_dependency 'simple-rss', '~> 1.3', '>= 1.3.1'
