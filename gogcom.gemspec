@@ -12,14 +12,14 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'http://rubygems.org/gems/gogcom'
   gem.license     = 'zlib'
 
-  gem.add_dependency 'coveralls', '0.7.2'
+  gem.add_dependency 'coveralls', '0.7.11'
   gem.add_development_dependency 'rake', '~> 10.3'
-  gem.add_development_dependency 'minitest', '5.4.3'
-  gem.add_development_dependency 'simplecov', '>= 0.9.1'
+  gem.add_development_dependency 'minitest', '5.5.1'
+  gem.add_development_dependency 'simplecov', '>= 0.9.2'
   gem.add_development_dependency 'vcr', '>= 2.9.1'
   gem.add_development_dependency 'webmock', '1.20.4'
 
-  gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.1'
+  gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.2'
   gem.add_runtime_dependency 'simple-rss', '~> 1.3', '>= 1.3.1'
 
   gem.files = Dir['Rakefile', '{lib,test}/**/*', 'README*', 'LICENSE*']
