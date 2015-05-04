@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.version     = Gogcom::VERSION
   gem.date        = '2014-08-10'
   gem.authors     = ['Rolandas Barysas']
-  gem.email       = ['r.b@riseup.net']
+  gem.email       = ['hello@rbrs.io']
   gem.summary     = 'A Ruby library for querying gog.com website'
   gem.description = 'Provides a simple, easy-to-use interface for gog.com website.'
   gem.homepage    = 'http://rubygems.org/gems/gogcom'

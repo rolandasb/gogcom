@@ -1,6 +1,8 @@
 gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![Build Status](https://travis-ci.org/rbrs/gogcom.svg?branch=develop)](https://travis-ci.org/rbrs/gogcom) [![Dependency Status](https://gemnasium.com/rbrs/gogcom.svg)](https://gemnasium.com/rbrs/gogcom) [![Coverage Status](https://coveralls.io/repos/rbrs/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rbrs/gogcom?branch=develop)
 ============
 
+**Notice** This project is not being developed anymore.
+
 Gogcom is a Ruby library for easy querying gog.com website.
 
 Because GOG.com doesn't have official API, data is being gathered by parsing global javascript object.
