@@ -14,7 +14,7 @@ I am working on unofficial GOG database, which after release will be connected w
 
 #### Installation
 ```
-gem 'gogcom', '~> 0.0.26'
+gem 'gogcom', '~> 0.0.27'
 bundle install
 ```
 
