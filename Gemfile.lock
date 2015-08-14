@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gogcom (0.0.26)
+    gogcom (0.0.27)
       coveralls (~> 0.8)
       json (~> 1.8)
       simple-rss (~> 1.3)
