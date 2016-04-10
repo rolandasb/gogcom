@@ -1,14 +1,14 @@
 gogcom [![Gem Version](https://badge.fury.io/rb/gogcom.svg)](http://badge.fury.io/rb/gogcom) [![Build Status](https://travis-ci.org/rbrs/gogcom.svg?branch=develop)](https://travis-ci.org/rbrs/gogcom) [![Coverage Status](https://coveralls.io/repos/rbrs/gogcom/badge.png?branch=develop)](https://coveralls.io/r/rbrs/gogcom?branch=develop)
 ============
 
-**Notice** This project is not being developed anymore.
+**This project is not being developed anymore and probably won't until GOG comes up with official API.**
+
+---
 
 Gogcom is a Ruby library for easy querying gog.com website.
 
 Because GOG.com doesn't have official API, data is being gathered by parsing global javascript object.
 That means that there's no guarantee that gem will always work as expected. **Do not use this in production.**
-
-I am working on unofficial GOG database, which after release will be connected with this library. This will prevent this library from breaking when unexpected changes occur on GOG end. You can see progress ![here](https://github.com/rbrs/gogdb).
 
 ## Usage
 
